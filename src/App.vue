@@ -111,7 +111,6 @@ import ListItemSelectedScreen from "./screens/list/selectedListItem";
 // import BasicListSwipeScreen from "./screens/listSwipe/basicListSwipe";
 // import MultiListSwipeScreen from "./screens/listSwipe/multiListSwiper";
 // import CustomRowListSwipeScreen from "./screens/listSwipe/customRowListSwiper";
-
 import PickerScreen from "./screens/picker";
 import BackButtonPickerScreen from "./screens/picker/backButtonPicker";
 import CustomHeaderPickerScreen from "./screens/picker/customHeaderPicker";
