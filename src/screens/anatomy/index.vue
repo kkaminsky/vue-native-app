@@ -18,18 +18,35 @@
       <view  class="container">
         <map-view class="container"
                   :initial-region="coordinates"
-                  :onPress="(event)=>clickOnMap(event)"
+                  :onPress="(event)=>{
+
+                  clickOnMap(event);}"
 
 
         >
-          <map-marker v-for="(marker,i) in markers" :key="i" :coordinate="marker" >
-            <!--<callout tootip>
-              &lt;!&ndash;<touchable :onPress="(event)=>clickOnMarker(event,i)">
+          <map-marker v-for="(marker,i) in markers" :key="i" :coordinate="marker" pointerEvents="auto"
+                      :onPress="(event)=>{event.stopPropagation()}">
+
+            <!--<callout >
+              <Text>
+                12333</Text>
+            </callout>-->
+            <callout :style="{ marginBottom: 50}" :onPress="(event)=>{clickOnMarker(event,i);}">
+              <view>
+                <nb-button success  >
+                  <nb-text>Success</nb-text>
+                </nb-button>
+              </view>
+            </callout>
+            <!--<callout >
+
                 <view>
-                  <nb-texxt>1231231</nb-texxt>
+                  <Text>
+                    12313
+                  </Text>
+                  &lt;!&ndash;<nb-text :onPress="(event)=>clickOnMarker(event,i)"> 1231231</nb-text>&ndash;&gt;
                 </view>
 
-              </touchable>&ndash;&gt;
             </callout>-->
           </map-marker>
           <callout :style="{ marginBottom: 50}">
@@ -37,6 +54,7 @@
               <nb-button success  >
                 <nb-text>Success</nb-text>
               </nb-button>
+
             </view>
           </callout>
         </map-view>
@@ -74,6 +92,7 @@
     },
     methods:{
       clickOnMap(event){
+
         this.markers.push(event.nativeEvent.coordinate)
         Toast.show({
           text: event.nativeEvent.coordinate.latitude + '        ' + event.nativeEvent.coordinate.longitude,
@@ -82,11 +101,16 @@
 
       },
       clickOnMarker(event,i){
+        event.stopPropagation()
         Toast.show({
-          text: "+++++++++" + event.nativeEvent.coordinate.latitude + '        ' + event.nativeEvent.coordinate.longitude + '      '+ i,
+          text: "+++++++++" + '      '+ i,
           buttonText: "Okay"
         });
-      }
+      },
+      deleteAllMarkers(){
+        event.stopPropagation();
+        this.markers = []
+      },
 
     },
     components: {

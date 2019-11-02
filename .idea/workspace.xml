@@ -1,207 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f701783e-1080-4489-a41f-cf67d4c30e05" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/camera.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/contacts/atul.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/contacts/himanshu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/contacts/megha.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/contacts/pratik.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/contacts/sanket.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/contacts/sankhadeep.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/contacts/saurabh.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/contacts/shivraj.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/contacts/shruti.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/contacts/shweta.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/contacts/supriya.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/contacts/varun.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/drawer-cover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/launchscreen-bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/logo-kitchen-sink.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/nblogo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/splashscreen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/swiper-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/swiper-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/swiper-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/swiper-4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/web-cover1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/boot/setup.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/actionSheet/icon.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/actionSheet/index.android.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/actionSheet/index.ios.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/actionSheet/regular.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/anatomy/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/badge/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/button/blockButton.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/button/customButton.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/button/defaultButton.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/button/disableButton.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/button/fullButton.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/button/iconButton.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/button/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/button/outlineButton.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/button/roundedButton.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/button/transparentButton.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/card/basicCard.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/card/carItemButton.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/card/cardBordered.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/card/cardHeaderAndFooter.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/card/cardImage.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/card/cardList.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/card/cardShowcase.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/card/cardTransparent.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/card/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/checkbox/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/deckSwiper/advancedDeckSwiper/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/deckSwiper/common/card.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/deckSwiper/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/deckSwiper/simpleDeckSwiper/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/fab/basicFab.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/fab/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/fab/multipleFabIcon.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/footer/badgeFooter.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/footer/basicFooter.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/footer/iconFooter.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/footer/iconTextFooter.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/footer/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/form/disabledInput.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/form/errorInput.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/form/fixedLabelInput.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/form/floatingLabelInput.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/form/iconInput.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/form/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/form/inlineLabelInput.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/form/placeholderInput.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/form/regularInput.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/form/roundedInput.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/form/stackedInput.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/form/succesInput.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/form/textAreaInput.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/form/underLineInput.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/header/header1.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/header/header2.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/header/header3.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/header/header4.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/header/header5.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/header/header6.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/header/header7.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/header/header8.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/header/headerNoShadow.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/header/headerSpan.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/header/index.android.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/header/index.ios.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/home/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/icons/basicIon.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/icons/familyIcon.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/icons/icon.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/icons/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/icons/platformSpecificIcon.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/layout/columnLayout.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/layout/customColumnLayout.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/layout/customRowLayout.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/layout/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/layout/nestedLayout.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/layout/rowLayout.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/list/avatarList.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/list/basicList.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/list/dividerList.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/list/headerList.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/list/iconList.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/list/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/list/selectedListItem.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/list/separatorList.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/list/thumbnailList.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/listSwipe/basicListSwipe.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/listSwipe/customRowListSwiper.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/listSwipe/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/listSwipe/multiListSwiper.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/picker/backButtonPicker.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/picker/customHeaderPicker.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/picker/headerPicker.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/picker/headerStylePicker.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/picker/index.android.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/picker/index.ios.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/picker/pickerTextItemText.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/picker/pickerWithIcon.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/picker/placeHolderPicker.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/picker/placeholderPickerNote.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/picker/regularPicker.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/radio/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/searchBar/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/segment/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/segment/segmentHeader.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/segment/segmentTab.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/sidebar/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/spinner/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/tabs/advanceTab.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/tabs/basicTab.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/tabs/components/tabFive.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/tabs/components/tabFour.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/tabs/components/tabOne.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/tabs/components/tabThree.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/tabs/components/tabTwo.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/tabs/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/tabs/scrollableTab.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/thumbnail/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/toast/basicToast.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/toast/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/toast/toastButton.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/toast/toastDuration.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/toast/toastPosition.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/toast/toastText.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/toast/toastType.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/typography/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/.eslintrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/Badge.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/Body.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/Button.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/Card.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/CardItem.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/CheckBox.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/Container.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/Content.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/Fab.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/Footer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/FooterTab.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/Form.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/H1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/H2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/H3.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/Header.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/Icon.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/Input.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/InputGroup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/Item.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/Label.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/Left.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/ListItem.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/Picker.android.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/Picker.ios.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/Picker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/Radio.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/Right.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/Segment.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/Separator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/Spinner.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/Subtitle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/SwipeRow.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/Switch.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/Tab.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/TabBar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/TabContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/TabHeading.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/Text.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/Textarea.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/Thumbnail.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/Title.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/Toast.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/View.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/components/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/variables/commonColor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/variables/material.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/variables/platform.js" afterDir="false" />
+    <list default="true" id="79c16e82-079e-4192-b210-2d6de02a9159" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/anatomy/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/anatomy/index.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -210,91 +15,41 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="7" column="24" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="24" />
-            </state>
-          </provider>
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/screens/anatomy/index.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="702">
-              <caret line="95" column="51" lean-forward="true" selection-start-line="95" selection-start-column="51" selection-end-line="95" selection-end-column="51" />
-              <folding>
-                <element signature="e#1143#1183#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="204">
+              <caret line="57" column="22" lean-forward="true" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/screens/actionSheet/icon.vue">
+        <entry file="file://$PROJECT_DIR$/node_modules/react-native-maps/lib/components/MapView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+            <state relative-caret-position="79">
+              <caret line="1066" column="23" lean-forward="true" selection-start-line="1066" selection-start-column="23" selection-end-line="1066" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/react-native-maps/index.d.ts">
+        <entry file="file://$PROJECT_DIR$/node_modules/react-native-maps/lib/components/MapCallout.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="246" column="23" selection-start-line="246" selection-start-column="23" selection-end-line="246" selection-end-column="23" />
+            <state relative-caret-position="102">
+              <caret line="44" column="15" selection-start-line="44" selection-start-column="15" selection-end-line="44" selection-end-column="15" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/screens/toast/basicToast.vue">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/screens/button/defaultButton.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="24" column="6" lean-forward="true" selection-start-line="24" selection-start-column="6" selection-end-line="26" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/screens/badge/index.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/screens/button/blockButton.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="4" column="73" selection-start-line="4" selection-start-column="73" selection-end-line="4" selection-end-column="73" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/boot/setup.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="640">
-              <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/App.vue">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -305,20 +60,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app.json" />
-        <option value="$PROJECT_DIR$/App.vue" />
         <option value="$PROJECT_DIR$/src/screens/anatomy/index.vue" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="y" value="1" />
-    <option name="width" value="1932" />
-    <option name="height" value="1085" />
-  </component>
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
+    <option name="x" value="732" />
+    <option name="y" value="-21" />
+    <option name="width" value="855" />
+    <option name="height" value="453" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -326,94 +76,65 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="taxichering" type="b2602c69:ProjectViewProjectNode" />
-              <item name="taxichering" type="462c0819:PsiDirectoryNode" />
+              <item name="vue-native-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vue-native-app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="taxichering" type="b2602c69:ProjectViewProjectNode" />
-              <item name="taxichering" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="taxichering" type="b2602c69:ProjectViewProjectNode" />
-              <item name="taxichering" type="462c0819:PsiDirectoryNode" />
+              <item name="vue-native-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vue-native-app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="taxichering" type="b2602c69:ProjectViewProjectNode" />
-              <item name="taxichering" type="462c0819:PsiDirectoryNode" />
+              <item name="vue-native-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vue-native-app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="screens" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="taxichering" type="b2602c69:ProjectViewProjectNode" />
-              <item name="taxichering" type="462c0819:PsiDirectoryNode" />
+              <item name="vue-native-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vue-native-app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="screens" type="462c0819:PsiDirectoryNode" />
               <item name="actionSheet" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="taxichering" type="b2602c69:ProjectViewProjectNode" />
-              <item name="taxichering" type="462c0819:PsiDirectoryNode" />
+              <item name="vue-native-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vue-native-app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="screens" type="462c0819:PsiDirectoryNode" />
               <item name="anatomy" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="taxichering" type="b2602c69:ProjectViewProjectNode" />
-              <item name="taxichering" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="screens" type="462c0819:PsiDirectoryNode" />
-              <item name="badge" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="taxichering" type="b2602c69:ProjectViewProjectNode" />
-              <item name="taxichering" type="462c0819:PsiDirectoryNode" />
+              <item name="vue-native-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vue-native-app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="screens" type="462c0819:PsiDirectoryNode" />
               <item name="button" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="taxichering" type="b2602c69:ProjectViewProjectNode" />
-              <item name="taxichering" type="462c0819:PsiDirectoryNode" />
+              <item name="vue-native-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vue-native-app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="screens" type="462c0819:PsiDirectoryNode" />
-              <item name="card" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="taxichering" type="b2602c69:ProjectViewProjectNode" />
-              <item name="taxichering" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="screens" type="462c0819:PsiDirectoryNode" />
-              <item name="toast" type="462c0819:PsiDirectoryNode" />
+              <item name="theme" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="editor.config.ad.shown" value="true" />
-    <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2018.3.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Konstantin\IdeaProjects\taxichering\assets" />
-      <recent name="C:\Users\Konstantin\IdeaProjects\taxichering" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -432,40 +153,35 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f701783e-1080-4489-a41f-cf67d4c30e05" name="Default Changelist" comment="" />
-      <created>1572631830885</created>
+      <changelist id="79c16e82-079e-4192-b210-2d6de02a9159" name="Default Changelist" comment="" />
+      <created>1572673479731</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1572631830885</updated>
-      <workItem from="1572631834301" duration="10840000" />
+      <updated>1572673479731</updated>
+      <workItem from="1572673481310" duration="8892000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10840000" />
+    <option name="totallyTimeSpent" value="8892000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Designer" />
-      <window_info id="Build Variants" side_tool="true" />
-      <window_info id="Image Layers" />
-      <window_info id="UI Designer" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info id="Captures" weight="0.3298887" />
-      <window_info id="Capture Tool" />
       <window_info id="npm" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="UI Designer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24939272" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="TypeScript" />
-      <window_info anchor="bottom" id="Android Profiler" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Logcat" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.32969603" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.41207814" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -473,14 +189,12 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Maven" />
       <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Device File Explorer" side_tool="true" />
-      <window_info anchor="right" id="SciView" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Palette&#9;" />
       <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Maven" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Database" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -490,84 +204,27 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="30" column="54" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/boot/setup.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/App.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" column="24" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/screens/button/blockButton.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="73" selection-start-line="4" selection-start-column="73" selection-end-line="4" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/screens/button/defaultButton.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="24" column="6" lean-forward="true" selection-start-line="24" selection-start-column="6" selection-end-line="26" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/screens/toast/basicToast.vue">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/react-native-maps/index.d.ts">
+    <entry file="file://$PROJECT_DIR$/node_modules/react-native-maps/lib/components/MapCallout.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="246" column="23" selection-start-line="246" selection-start-column="23" selection-end-line="246" selection-end-column="23" />
+        <state relative-caret-position="102">
+          <caret line="44" column="15" selection-start-line="44" selection-start-column="15" selection-end-line="44" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/screens/badge/index.vue">
+    <entry file="file://$PROJECT_DIR$/node_modules/react-native-maps/lib/components/MapView.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/screens/actionSheet/icon.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+        <state relative-caret-position="79">
+          <caret line="1066" column="23" lean-forward="true" selection-start-line="1066" selection-start-column="23" selection-end-line="1066" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/screens/anatomy/index.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="95" column="51" lean-forward="true" selection-start-line="95" selection-start-column="51" selection-end-line="95" selection-end-column="51" />
-          <folding>
-            <element signature="e#1143#1183#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="204">
+          <caret line="57" column="22" lean-forward="true" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -576,7 +233,7 @@
     <states>
       <state key="ProjectJDKs.UI">
         <settings>
-          <last-edited>1.8 (2)</last-edited>
+          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
