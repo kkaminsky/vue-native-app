@@ -1,4 +1,8 @@
 <template>
+  <!--<view class="container">
+    <camera class="container" :type="myType"/>
+  </view>-->
+
   <nb-container :style="{ backgroundColor: '#fff' }">
     <nb-header>
       <nb-left>
@@ -34,6 +38,7 @@
         <nb-text>Search</nb-text>
       </nb-button>
     </nb-header>
+
       <view  class="container">
         <map-view class="container"
                   :initial-region="coordinates"
@@ -100,16 +105,22 @@
   import { Toast } from "native-base";
 
   import axios from 'axios'
+
+
+  import  {Camera} from "expo-camera";
   //import DeviceInfo from 'react-native-device-info';
+  //import QRCodeScanner from 'react-native-qrcode-scanner';
   export default {
     data: function() {
       return {
+        hasCameraPermission : false,
         coordinates: {
           longitude: 65.52667,
           latitude: 57.149963,
           latitudeDelta: 0.0922,
           longitudeDelta: 0.0421,
         },
+        myType:Camera.Constants.Type.Back,
         arr:[
           '#7F0000',
           '#00000000', // no color, creates a "long" gradient between the previous and next coordinate
@@ -118,9 +129,7 @@
           '#238C23',
           '#7F0000'
         ],
-        markers: [
-
-          ],
+        markers: [],
         polylines:[],
         searchP1:'',
         searchP2:'',
@@ -243,7 +252,8 @@
       MapView,
       MapMarker: MapView.Marker,
       Callout: MapView.Callout,
-      Polyline: MapView.Polyline
+      Polyline: MapView.Polyline,
+      Camera
     }
   };
 </script>
