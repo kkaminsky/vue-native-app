@@ -40,6 +40,13 @@
                   :onPress="(event)=>{
                   clickOnMap(event);}"
         >
+          <polyline v-for="(polyline,i) in polylines" :key="i" :coordinates="polyline"
+                    strokeColor="#000"
+                    :strokeWidth="6"
+                    :strokeColors="arr"
+          >
+
+          </polyline>
 
           <map-marker v-for="(marker,i) in markers" :key="i" :coordinate="marker" pointerEvents="auto"
                       :onPress="(event)=>{event.stopPropagation()}">
@@ -103,9 +110,18 @@
           latitudeDelta: 0.0922,
           longitudeDelta: 0.0421,
         },
+        arr:[
+          '#7F0000',
+          '#00000000', // no color, creates a "long" gradient between the previous and next coordinate
+          '#B24112',
+          '#E5845C',
+          '#238C23',
+          '#7F0000'
+        ],
         markers: [
 
           ],
+        polylines:[],
         searchP1:'',
         searchP2:'',
         uuidReq: ''
@@ -124,9 +140,9 @@
       createReq(event){
 
         event.stopPropagation()
-
+        let guuid = this.uuidv4()
         axios.post('http://192.168.43.7:8080/api/addRequest',{
-          id: this.uuidReq,
+          id: guuid,
           userName: 'user2',
           driver: false,
           fromLongitude: this.markers[0].longitude,
@@ -139,7 +155,7 @@
             res.data.forEach(superClusters=>{
               superClusters.forEach(clusters=>{
                 clusters.forEach(req=>{
-                  if(req.id===this.uuidReq){
+                  if(req.id===guuid){
                     result = clusters
                   }
                 })
@@ -150,6 +166,8 @@
             longitude:parseFloat(result[0].fromLongitude)}
             this.markers.push({latitude:parseFloat(result[0].toLatitude),
               longitude:parseFloat(result[0].toLongitude)})
+
+            this.drawPath()
           })
         })
       },
@@ -160,10 +178,10 @@
           longitude: event.nativeEvent.coordinate.longitude,
           latitude: event.nativeEvent.coordinate.latitude
         }).then(res=>{
-          if(this.markers.length===1){
+          if(this.markers.length<2){
             this.searchP1 = res.data.display_name
           }
-          if(this.markers.length===2){
+          if(this.markers.length>=2){
             this.searchP2 = res.data.display_name
           }
 
@@ -173,6 +191,35 @@
           });
         })
 
+      },
+      drawPath(){
+        axios.post('http://192.168.43.7:8080/api/route',{
+          coordinates: [this.markers[0],this.markers[1]],
+          variant: 'foot'
+        }).then(res1=>{
+          this.polylines.push(res1.data.routes[0].geometry.coordinates.map(coord=>{
+            let a = {}
+            a.latitude = coord[1]
+            a.longitude = coord[0]
+            return a
+          }))
+          Toast.show({
+            text:res1.data.routes[0].geometry.coordinates
+          })
+          axios.post('http://192.168.43.7:8080/api/route',{
+            coordinates: [this.markers[1],this.markers[2]]
+          }).then(res=>{
+            this.polylines.push(res.data.routes[0].geometry.coordinates.map(coord=>{
+              let a = {}
+              a.latitude = coord[1]
+              a.longitude = coord[0]
+              return a
+            }))
+            Toast.show({
+              text:res.data.routes[0].geometry.coordinates.length
+            })
+          })
+        })
       },
       clickOnMarker(event,i){
         event.stopPropagation()
@@ -195,7 +242,8 @@
     components: {
       MapView,
       MapMarker: MapView.Marker,
-      Callout: MapView.Callout
+      Callout: MapView.Callout,
+      Polyline: MapView.Polyline
     }
   };
 </script>
