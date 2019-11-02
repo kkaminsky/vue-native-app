@@ -11,6 +11,14 @@
         class="drawer-image"
         :style="stylesObj.drawerImageObj"
       />
+      <view class="text-container">
+        <nb-h3 :style="{ marginBottom: 8, textStyle: 'bold' }" class="text-color-white"
+        >Привет, {{username}}</nb-h3>
+      </view>
+      <view class="text-container">
+        <nb-h3 :style="{ marginBottom: 8 }" class="text-color-white"
+        >Литров: {{coins}}</nb-h3>
+      </view>
       <nb-list>
         <nb-list-item
           v-for="data in datas"
@@ -52,6 +60,7 @@
 import { Dimensions, Platform } from "react-native";
 import drawerCover from "../../../assets/drawer-cover.png";
 import drawerImage from "../../../assets/logo-kitchen-sink.png";
+import axios from 'axios'
 
 const deviceHeight = Dimensions.get("window").height;
 const deviceWidth = Dimensions.get("window").width;
@@ -81,6 +90,8 @@ export default {
           fontWeight: "400"
         }
       },
+      username: global.username,
+      coins: global.coins,
       datas: [
         {
           name: "Anatomy",
@@ -245,6 +256,13 @@ export default {
   },
   methods: {
     handleListItemClick(dataObj) {
+      axios.get('http://192.168.43.7:8080/coin/user/' + global.username).then(res1=> {
+        global.coins = res1.data.balance
+        global.username = res1.data.username
+        global.driver = res1.data.driver
+        this.username = global.username
+        this.coins = global.coins
+      })
       this.navigation.navigate(dataObj.route);
     }
   }

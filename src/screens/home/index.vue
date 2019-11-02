@@ -11,19 +11,21 @@
       </view>
       <view class="text-container">
         <nb-h3 :style="{ marginBottom: 8 }" class="text-color-white"
-          >App To ShowCase</nb-h3
-        >
-        <nb-h3 class="text-color-white">NativeBase Components</nb-h3>
+          >Поиск попутчиков в городе</nb-h3>
       </view>
 
-      <nb-text> Введи юзернейм: </nb-text>
-      <nb-input placeholder="Юзернейм" v-model="username"/>
+      <view class="text-container">
+        <nb-h3 :style="{ marginBottom: 8 }" class="text-color-white"
+        >Введи юзернейм:</nb-h3>
+      </view>
+
+      <nb-input  placeholder="Юзернейм" v-model="username"/>
       <view :style="{ marginBottom: 80 }">
         <nb-button
           :style="stylesObj.btnContainer"
           :onPress="handleLetGoBtnPress"
         >
-          <nb-text> Lets Go!</nb-text>
+          <nb-text> Войти </nb-text>
         </nb-button>
       </view>
     </image-background>
@@ -35,6 +37,7 @@ import { Dimensions, Platform } from "react-native";
 import launchScreenBg from "../../../assets/launchscreen-bg.png";
 import launchscreenLogo from "../../../assets/logo-kitchen-sink.png";
 import { Toast } from "native-base";
+import axios from 'axios'
 
 export default {
   props: {
@@ -46,7 +49,7 @@ export default {
     return {
       launchScreenBg,
       launchscreenLogo,
-      username: "qwertyq",
+      username: "den",
       stylesObj: {
         logoContainerStyle: {
           marginTop: Dimensions.get("window").height / 8
@@ -70,8 +73,12 @@ export default {
         })
         return
       }
-      global.username = this.username
-      this.navigation.openDrawer();
+      axios.get('http://192.168.43.7:8080/coin/user/' + this.username).then(res1=> {
+        global.coins = res1.data.balance
+        global.username = res1.data.username
+        global.driver = res1.data.driver
+        this.navigation.openDrawer();
+      })
     }
   }
 };

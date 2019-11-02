@@ -139,7 +139,6 @@
   import axios from 'axios'
 
 
-  import  {Camera} from "expo-camera";
   //import DeviceInfo from 'react-native-device-info';
   //import QRCodeScanner from 'react-native-qrcode-scanner';
   export default {
@@ -182,7 +181,6 @@
                   margin:3,
                   fontSize: 15
                 },
-          myType:Camera.Constants.Type.Back,
         superFlag: false,
         arr:[
           '#7F0000',
@@ -197,6 +195,7 @@
         searchP1:'',
         searchP2:'',
         uuidReq: '',
+        pathDrawed: false,
         footerText: "Укажите маршрут"
       };
     },
@@ -215,6 +214,19 @@
           return v.toString(16);
         });
       },
+      removeMoney(cost){
+        axios.post('http://192.168.43.7:8080/coin/buy/money',{
+          moneyAmount: cost * -1,
+          user: global.username
+        }).then(res=>{
+          if(res.data && res.data.balance) {
+            global.coins = res.data.balance
+            Toast.show({
+              text:"Литры списаны"
+            })
+          }
+        })
+      },
       createReq(event){
         if(this.markers.length < 2){
           Toast.show({
@@ -223,6 +235,16 @@
           return
         }
         event.stopPropagation()
+        // если маршрут уже построен то начинаем движение к точке сбора
+        // исписываем деньги
+        if(this.pathDrawed && !global.driver) {
+          let cost = global.distance * 0.001
+          Toast.show({
+            text:"Убираем деньги " + cost
+          })
+          this.removeMoney(cost)
+          return
+        }
         let guuid = this.uuidv4()
         axios.post('http://192.168.43.7:8080/api/addRequest',{
           id: guuid,
@@ -274,6 +296,7 @@
             this.searchP2 = res.data.address.road + " " + house
             this.footerText = "Найти попутчиков"
           } else {
+            this.pathDrawed = false
             this.searchP1 = ""
             this.searchP2 = ""
             this.markers = []
@@ -281,10 +304,10 @@
             this.footerText = "Проложить маршрут"
           }
 
-          Toast.show({
-            text: res.data.display_name,
-            buttonText: "Okay"
-          });
+          // Toast.show({
+          //   text: res.data.display_name,
+          //   buttonText: "Okay"
+          // });
         })
 
       },
@@ -299,22 +322,26 @@
             a.longitude = coord[0]
             return a
           }))
-          Toast.show({
-            text:res1.data.routes[0].geometry.coordinates
-          })
+          // Toast.show({
+          //   text:res1.data.routes[0].geometry.coordinates
+          // })
           axios.post('http://192.168.43.7:8080/api/route',{
             coordinates: [this.markers[1],this.markers[2]]
           }).then(res=>{
+            if(res.data && res.data.routes){
+              global.distance = res.data.routes[0].distance
+            }
             this.polylines.push(res.data.routes[0].geometry.coordinates.map(coord=>{
               let a = {}
               a.latitude = coord[1]
               a.longitude = coord[0]
               return a
             }))
-            Toast.show({
-              text:res.data.routes[0].geometry.coordinates.length
-            })
+            // Toast.show({
+            //   text:res.data.routes[0].geometry.coordinates.length
+            // })
             this.footerText = "Начинаю движение к точке сбора"
+            this.pathDrawed = true
           })
         })
       },
@@ -322,10 +349,10 @@
         event.stopPropagation()
         this.markers.splice(i,1);
 
-        Toast.show({
-          text: "+++++++++" + '      '+ i,
-          buttonText: "Okay"
-        });
+        // Toast.show({
+        //   text: "+++++++++" + '      '+ i,
+        //   buttonText: "Okay"
+        // });
       },
       deleteAllMarkers(){
         event.stopPropagation();
@@ -340,8 +367,7 @@
       MapView,
       MapMarker: MapView.Marker,
       Callout: MapView.Callout,
-      Polyline: MapView.Polyline,
-      Camera
+      Polyline: MapView.Polyline
     }
   };
 </script>
