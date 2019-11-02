@@ -40,6 +40,7 @@
                   :onPress="(event)=>{
                   clickOnMap(event);}"
         >
+
           <map-marker v-for="(marker,i) in markers" :key="i" :coordinate="marker" pointerEvents="auto"
                       :onPress="(event)=>{event.stopPropagation()}">
 
@@ -80,7 +81,7 @@
       </view>
     <nb-footer>
       <nb-footer-tab>
-        <nb-button active full>
+        <nb-button active full :onPress="(event)=>{createReq(event);}">
           <nb-text>Footer</nb-text>
         </nb-button>
       </nb-footer-tab>
@@ -92,6 +93,7 @@
   import { Toast } from "native-base";
 
   import axios from 'axios'
+  //import DeviceInfo from 'react-native-device-info';
   export default {
     data: function() {
       return {
@@ -105,10 +107,52 @@
 
           ],
         searchP1:'',
-        searchP2:''
+        searchP2:'',
+        uuidReq: ''
       };
     },
+    created(){
+      this.uuidReq = this.uuidv4()
+    },
     methods:{
+      uuidv4() {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+          var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+          return v.toString(16);
+        });
+      },
+      createReq(event){
+
+        event.stopPropagation()
+
+        axios.post('http://192.168.43.7:8080/api/addRequest',{
+          id: this.uuidReq,
+          userName: 'user2',
+          driver: false,
+          fromLongitude: this.markers[0].longitude,
+          fromLatitude: this.markers[0].latitude,
+          toLongitude: this.markers[1].longitude,
+          toLatitude: this.markers[1].latitude
+        }).then(res=>{
+          axios.post('http://192.168.43.7:8080/api/cluster').then(res=>{
+            let result = []
+            res.data.forEach(superClusters=>{
+              superClusters.forEach(clusters=>{
+                clusters.forEach(req=>{
+                  if(req.id===this.uuidReq){
+                    result = clusters
+                  }
+                })
+              })
+            })
+
+            this.markers[1] = {latitude:parseFloat(result[0].fromLatitude),
+            longitude:parseFloat(result[0].fromLongitude)}
+            this.markers.push({latitude:parseFloat(result[0].toLatitude),
+              longitude:parseFloat(result[0].toLongitude)})
+          })
+        })
+      },
       clickOnMap(event){
 
         this.markers.push(event.nativeEvent.coordinate)
@@ -128,10 +172,6 @@
             buttonText: "Okay"
           });
         })
-        Toast.show({
-          text: event.nativeEvent.coordinate.latitude + '        ' + event.nativeEvent.coordinate.longitude,
-          buttonText: "Okay"
-        });
 
       },
       clickOnMarker(event,i){
@@ -155,8 +195,7 @@
     components: {
       MapView,
       MapMarker: MapView.Marker,
-      Callout: MapView.Callout,
-
+      Callout: MapView.Callout
     }
   };
 </script>
