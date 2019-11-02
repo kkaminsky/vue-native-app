@@ -14,6 +14,7 @@
       </nb-body>
       <nb-right />
     </nb-header>
+<!--    <nb-text >От: {{searchP1}}, До:{{searchP2}}</nb-text>-->
     <nb-header searchBar rounded>
       <nb-item>
         <nb-icon active name="search" />
@@ -73,14 +74,14 @@
 
             </callout>-->
           </map-marker>
-          <callout :style="{ marginBottom: 50}">
-            <view>
-              <nb-button success  >
-                <nb-text>Success</nb-text>
-              </nb-button>
+<!--          <callout :style="{ marginBottom: 50}">-->
+<!--            <view>-->
+<!--              <nb-button success  >-->
+<!--                <nb-text>Success</nb-text>-->
+<!--              </nb-button>-->
 
-            </view>
-          </callout>
+<!--            </view>-->
+<!--          </callout>-->
         </map-view>
 
 
@@ -89,7 +90,7 @@
     <nb-footer>
       <nb-footer-tab>
         <nb-button active full :onPress="(event)=>{createReq(event);}">
-          <nb-text>Footer</nb-text>
+          <nb-text>{{footerText}}</nb-text>
         </nb-button>
       </nb-footer-tab>
     </nb-footer>
@@ -124,7 +125,8 @@
         polylines:[],
         searchP1:'',
         searchP2:'',
-        uuidReq: ''
+        uuidReq: '',
+        footerText: "Проложить маршрут"
       };
     },
     created(){
@@ -138,12 +140,17 @@
         });
       },
       createReq(event){
-
+        if(this.markers.length < 2){
+          Toast.show({
+            text:"Выберите откуда и куда ехать"
+          })
+          return
+        }
         event.stopPropagation()
         let guuid = this.uuidv4()
         axios.post('http://192.168.43.7:8080/api/addRequest',{
           id: guuid,
-          userName: 'user2',
+          userName: global.username,
           driver: false,
           fromLongitude: this.markers[0].longitude,
           fromLatitude: this.markers[0].latitude,
@@ -179,10 +186,23 @@
           latitude: event.nativeEvent.coordinate.latitude
         }).then(res=>{
           if(this.markers.length<2){
-            this.searchP1 = res.data.display_name
-          }
-          if(this.markers.length>=2){
-            this.searchP2 = res.data.display_name
+            let house = ""
+            if(res.data.address.house_number)
+              house = res.data.address.house_number
+            this.searchP1 = res.data.address.road + " " + house
+            this.footerText = "Проложить маршрут"
+          } else if(this.markers.length == 2){
+            let house = ""
+            if(res.data.address.house_number)
+              house = res.data.address.house_number
+            this.searchP2 = res.data.address.road + " " + house
+            this.footerText = "Найти попутчиков"
+          } else {
+            this.searchP1 = ""
+            this.searchP2 = ""
+            this.markers = []
+            this.polylines = []
+            this.footerText = "Проложить маршрут"
           }
 
           Toast.show({
@@ -218,6 +238,7 @@
             Toast.show({
               text:res.data.routes[0].geometry.coordinates.length
             })
+            this.footerText = "Начинаю движение к точке сбора"
           })
         })
       },

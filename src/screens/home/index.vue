@@ -15,6 +15,9 @@
         >
         <nb-h3 class="text-color-white">NativeBase Components</nb-h3>
       </view>
+
+      <nb-text> Введи юзернейм: </nb-text>
+      <nb-input placeholder="Юзернейм" v-model="username"/>
       <view :style="{ marginBottom: 80 }">
         <nb-button
           :style="stylesObj.btnContainer"
@@ -31,6 +34,7 @@
 import { Dimensions, Platform } from "react-native";
 import launchScreenBg from "../../../assets/launchscreen-bg.png";
 import launchscreenLogo from "../../../assets/logo-kitchen-sink.png";
+import { Toast } from "native-base";
 
 export default {
   props: {
@@ -42,6 +46,7 @@ export default {
     return {
       launchScreenBg,
       launchscreenLogo,
+      username: "",
       stylesObj: {
         logoContainerStyle: {
           marginTop: Dimensions.get("window").height / 8
@@ -59,6 +64,13 @@ export default {
   },
   methods: {
     handleLetGoBtnPress() {
+      if(this.username == ""){
+        Toast.show({
+          text: "Заполни юзернейм!"
+        })
+        return
+      }
+      global.username = this.username
       this.navigation.openDrawer();
     }
   }
