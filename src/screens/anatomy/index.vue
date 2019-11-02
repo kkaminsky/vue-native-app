@@ -3,8 +3,8 @@
     <camera class="container" :type="myType"/>
   </view>-->
 
-  <nb-container :style="{ backgroundColor: '#fff' }">
-    <nb-header>
+  <nb-container >
+    <nb-header >
       <nb-left>
         <nb-button
                 transparent
@@ -19,25 +19,27 @@
       <nb-right />
     </nb-header>
 <!--    <nb-text >От: {{searchP1}}, До:{{searchP2}}</nb-text>-->
-    <nb-header searchBar rounded>
+    <nb-header searchBar rounded :style="{height: 20,paddingTop:-25}">
+      <nb-text>
+        A:
+      </nb-text>
       <nb-item>
         <nb-icon active name="search" />
         <nb-input placeholder="Search" v-model="searchP1"/>
         <nb-icon active name="people" />
       </nb-item>
-      <nb-button transparent>
-        <nb-text>Search</nb-text>
-      </nb-button>
-    </nb-header>
-    <nb-header searchBar rounded>
+
+    </nb-header >
+    <nb-header searchBar rounded :style="{height: 20,paddingTop:-25}">
+      <nb-text>
+        B:
+      </nb-text>
       <nb-item>
         <nb-icon active name="search" />
         <nb-input placeholder="Search" v-model="searchP2"/>
         <nb-icon active name="people" />
       </nb-item>
-      <nb-button transparent :onPress="()=>{search();}">
-        <nb-text>Search</nb-text>
-      </nb-button>
+
     </nb-header>
 
       <view  class="container">
@@ -92,12 +94,41 @@
 
 
       </view>
-    <nb-footer>
+
+    <nb-footer :style="{height:20}" v-if="superFlag">
       <nb-footer-tab>
-        <nb-button active full :onPress="(event)=>{createReq(event);}">
-          <nb-text>{{footerText}}</nb-text>
+        <nb-button rounded large info :style="superStyle3"  :onPress="(event)=>{superFlag=!superFlag}">
+          <nb-text :style="superStyle">Я пассажир</nb-text>
+        </nb-button>
+        <nb-button light rounded large  :style="superStyle31"  :onPress="(event)=>{superFlag=!superFlag}">
+          <nb-text :style="superStyle">Я водитель</nb-text>
         </nb-button>
       </nb-footer-tab>
+    </nb-footer>
+    <nb-footer :style="{height:20}" v-else>
+      <nb-footer-tab>
+        <nb-button light rounded large  :style="superStyle31"  :onPress="(event)=>{superFlag=!superFlag}">
+          <nb-text :style="superStyle">Я пассажир</nb-text>
+        </nb-button>
+        <nb-button  rounded large info  :style="superStyle3"  :onPress="(event)=>{superFlag=!superFlag}">
+          <nb-text :style="superStyle">Я водитель</nb-text>
+        </nb-button>
+      </nb-footer-tab>
+    </nb-footer>
+    <nb-footer :style="{height:20}">
+      <nb-footer-tab>
+        <nb-button v-if="disable" rounded large success :style="superStyle2"  :onPress="(event)=>{createReq(event);}">
+          <nb-text :style="superStyle">{{footerText}}</nb-text>
+        </nb-button>
+        <nb-button v-else disabled rounded large  :style="superStyle2"  :onPress="(event)=>{createReq(event);}">
+          <nb-text :style="superStyle">{{footerText}}</nb-text>
+        </nb-button>
+
+
+
+      </nb-footer-tab>
+
+
     </nb-footer>
   </nb-container>
 </template>
@@ -121,7 +152,38 @@
           latitudeDelta: 0.0922,
           longitudeDelta: 0.0421,
         },
-        myType:Camera.Constants.Type.Back,
+        superStyle:
+                {
+                  color: '#fff',
+                  marginBottom: 0,
+                  fontSize: 15,
+
+                },
+        superStyle2:
+                {
+                  color: '#fff',
+                  marginBottom: 50,
+                  fontSize: 15,
+                  margin:3
+                },
+        superStyle3:
+                {
+                  //backgroundColor:'#b5b5b5',
+                  color: '#fff',
+                  marginBottom: 75,
+                  margin:3,
+                  fontSize: 15
+                },
+        superStyle31:
+                {
+                  backgroundColor:'#b5b5b5',
+                  color: '#fff',
+                  marginBottom: 75,
+                  margin:3,
+                  fontSize: 15
+                },
+          myType:Camera.Constants.Type.Back,
+        superFlag: false,
         arr:[
           '#7F0000',
           '#00000000', // no color, creates a "long" gradient between the previous and next coordinate
@@ -135,11 +197,16 @@
         searchP1:'',
         searchP2:'',
         uuidReq: '',
-        footerText: "Проложить маршрут"
+        footerText: "Укажите маршрут"
       };
     },
     created(){
       this.uuidReq = this.uuidv4()
+    },
+    computed:{
+      disable(){
+        return this.markers.length>1
+      }
     },
     methods:{
       uuidv4() {

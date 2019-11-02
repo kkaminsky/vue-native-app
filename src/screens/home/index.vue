@@ -46,7 +46,7 @@ export default {
     return {
       launchScreenBg,
       launchscreenLogo,
-      username: "",
+      username: "qwertyq",
       stylesObj: {
         logoContainerStyle: {
           marginTop: Dimensions.get("window").height / 8
