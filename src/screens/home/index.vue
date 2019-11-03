@@ -2,26 +2,22 @@
   <nb-container>
     <status-bar :barStyle="'light-content'"></status-bar>
     <image-background :source="launchScreenBg" class="imageContainer">
-      <view class="logoContainer" :style="stylesObj.logoContainerStyle">
-        <image-background
-          :source="launchscreenLogo"
-          class="logo"
-          :style="stylesObj.logoStyle"
-        />
-      </view>
+
       <view class="text-container">
-        <nb-h3 :style="{ marginBottom: 8 }" class="text-color-white"
+        <nb-h3 :style="{ marginTop: 100 }" class="text-color-white"
           >Поиск попутчиков в городе</nb-h3>
       </view>
 
       <view class="text-container">
-        <nb-h3 :style="{ marginBottom: 8 }" class="text-color-white"
+        <nb-h3 :style="{ marginTop: 20 }" class="text-color-white"
         >Введи юзернейм:</nb-h3>
       </view>
 
-      <nb-input  placeholder="Юзернейм" v-model="username"/>
-      <view :style="{ marginBottom: 80 }">
-        <nb-button
+
+        <nb-input  placeholder="Юзернейм" v-model="username"/>
+
+      <view :style="{ marginBottom: 20, alignSelf: 'center' }">
+        <nb-button rounded info
           :style="stylesObj.btnContainer"
           :onPress="handleLetGoBtnPress"
         >
@@ -52,9 +48,10 @@ export default {
       username: "den",
       stylesObj: {
         logoContainerStyle: {
-          marginTop: Dimensions.get("window").height / 8
+          marginTop: Dimensions.get("window").height / 10
         },
         logoStyle: {
+          height:300,
           left: Platform.OS === "android" ? 40 : 50,
           top: Platform.OS === "android" ? 35 : 60
         },
@@ -73,7 +70,7 @@ export default {
         })
         return
       }
-      axios.get('http://192.168.43.247:8080/coin/user/' + this.username).then(res1=> {
+      axios.get('http://192.168.43.7:8080/coin/user/' + this.username).then(res1=> {
         global.coins = res1.data.balance
         global.username = res1.data.username
         global.driver = res1.data.driver
@@ -99,7 +96,7 @@ export default {
 }
 .logo {
   position: absolute;
-  width: 280;
+  width: 300;
   height: 100;
 }
 .text-container {

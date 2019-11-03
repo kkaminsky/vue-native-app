@@ -36,7 +36,7 @@
     },
     methods: {
       regPin(){
-        axios.post('http://192.168.43.247:8080/api/pincode',{
+        axios.post('http://192.168.43.7:8080/api/pincode',{
           pincode: this.pincode
         }).then(res=>{
           if(res.data) {
