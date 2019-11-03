@@ -97,20 +97,20 @@
 
     <nb-footer :style="{height:20}" v-if="superFlag">
       <nb-footer-tab>
-        <nb-button rounded large info :style="superStyle3"  :onPress="(event)=>{superFlag=!superFlag}">
+        <nb-button rounded large info :style="superStyle3"  :onPress="(event)=>{switchToPass();}">
           <nb-text :style="superStyle">Я пассажир</nb-text>
         </nb-button>
-        <nb-button light rounded large  :style="superStyle31"  :onPress="(event)=>{superFlag=!superFlag}">
+        <nb-button light rounded large  :style="superStyle31"  :onPress="(event)=>{switchToDriver();}">
           <nb-text :style="superStyle">Я водитель</nb-text>
         </nb-button>
       </nb-footer-tab>
     </nb-footer>
     <nb-footer :style="{height:20}" v-else>
       <nb-footer-tab>
-        <nb-button light rounded large  :style="superStyle31"  :onPress="(event)=>{superFlag=!superFlag}">
+        <nb-button light rounded large  :style="superStyle31"  :onPress="(event)=>{switchToPass();}">
           <nb-text :style="superStyle">Я пассажир</nb-text>
         </nb-button>
-        <nb-button  rounded large info  :style="superStyle3"  :onPress="(event)=>{superFlag=!superFlag}">
+        <nb-button  rounded large info  :style="superStyle3"  :onPress="(event)=>{switchToDriver();}">
           <nb-text :style="superStyle">Я водитель</nb-text>
         </nb-button>
       </nb-footer-tab>
@@ -196,6 +196,7 @@
         searchP2:'',
         uuidReq: '',
         pathDrawed: false,
+        readyForPinCode: false,
         footerText: "Укажите маршрут"
       };
     },
@@ -215,7 +216,7 @@
         });
       },
       removeMoney(cost){
-        axios.post('http://192.168.43.7:8080/coin/buy/money',{
+        axios.post('http://192.168.43.247:8080/coin/buy/money',{
           moneyAmount: cost * -1,
           user: global.username
         }).then(res=>{
@@ -224,8 +225,22 @@
             Toast.show({
               text:"Литры списаны"
             })
+            this.footerText = "Я у водителя в машине, хочу ввести пин код"
+            this.readyForPinCode = true
           }
         })
+      },
+      switchToDriver(){
+        if(this.readyForPinCode) {
+          this.footerText = 'Показать пин код'
+        }
+        this.superFlag = false
+      },
+      switchToPass(){
+        this.superFlag = true
+        if(this.readyForPinCode) {
+          this.footerText = 'Я у водителя в машине, хочу ввести пин код'
+        }
       },
       createReq(event){
         if(this.markers.length < 2){
@@ -236,17 +251,23 @@
         }
         event.stopPropagation()
         // если маршрут уже построен то начинаем движение к точке сбора
-        // исписываем деньги
-        if(this.pathDrawed && !global.driver) {
+        // исписываем деньги superflag = я пассажир голубая
+        if(this.pathDrawed && this.superFlag && !this.readyForPinCode) {
           let cost = global.distance * 0.001
           Toast.show({
             text:"Убираем деньги " + cost
           })
           this.removeMoney(cost)
           return
+        } else if (this.pathDrawed && !this.superFlag) {
+          return
+        } else if(this.readyForPinCode) {
+          // переход на окно ввода пин кода
+          this.props.navigation.navigate("PinCodeInput")
+          return;
         }
         let guuid = this.uuidv4()
-        axios.post('http://192.168.43.7:8080/api/addRequest',{
+        axios.post('http://192.168.43.247:8080/api/addRequest',{
           id: guuid,
           userName: global.username,
           driver: false,
@@ -255,7 +276,7 @@
           toLongitude: this.markers[1].longitude,
           toLatitude: this.markers[1].latitude
         }).then(res=>{
-          axios.post('http://192.168.43.7:8080/api/cluster').then(res=>{
+          axios.post('http://192.168.43.247:8080/api/cluster').then(res=>{
             let result = []
             res.data.forEach(superClusters=>{
               superClusters.forEach(clusters=>{
@@ -279,7 +300,7 @@
       clickOnMap(event){
 
         this.markers.push(event.nativeEvent.coordinate)
-        axios.post('http://192.168.43.7:8080/api/reverse',{
+        axios.post('http://192.168.43.247:8080/api/reverse',{
           longitude: event.nativeEvent.coordinate.longitude,
           latitude: event.nativeEvent.coordinate.latitude
         }).then(res=>{
@@ -312,7 +333,7 @@
 
       },
       drawPath(){
-        axios.post('http://192.168.43.7:8080/api/route',{
+        axios.post('http://192.168.43.247:8080/api/route',{
           coordinates: [this.markers[0],this.markers[1]],
           variant: 'foot'
         }).then(res1=>{
@@ -325,7 +346,7 @@
           // Toast.show({
           //   text:res1.data.routes[0].geometry.coordinates
           // })
-          axios.post('http://192.168.43.7:8080/api/route',{
+          axios.post('http://192.168.43.247:8080/api/route',{
             coordinates: [this.markers[1],this.markers[2]]
           }).then(res=>{
             if(res.data && res.data.routes){
