@@ -49,15 +49,16 @@
                   clickOnMap(event);}"
         >
           <polyline v-for="(polyline,i) in polylines" :key="i" :coordinates="polyline"
-                    strokeColor="#000"
+                    strokeColor="#5cb85c"
                     :strokeWidth="6"
-                    :strokeColors="arr"
           >
 
           </polyline>
 
           <map-marker v-for="(marker,i) in markers" :key="i" :coordinate="marker" pointerEvents="auto"
                       :onPress="(event)=>{event.stopPropagation()}">
+
+
 
             <!--<callout >
               <Text>
@@ -70,16 +71,16 @@
 
               </view>
             </callout>
-            <!--<callout >
 
-                <view>
-                  <Text>
-                    12313
-                  </Text>
-                  &lt;!&ndash;<nb-text :onPress="(event)=>clickOnMarker(event,i)"> 1231231</nb-text>&ndash;&gt;
-                </view>
+          </map-marker>
+          <map-marker v-if="poolMarker" :coordinate="poolMarker" pointerEvents="auto" pinColor="#238C23" :onPress="(event)=>{clickOnPullMarker(event);}">
+            <callout :style="{ marginBottom: 50}" >
+              <view>
 
-            </callout>-->
+                <nb-text>Точка сбора. Подтвердить присутстиве?</nb-text>
+
+              </view>
+            </callout>
           </map-marker>
 <!--          <callout :style="{ marginBottom: 50}">-->
 <!--            <view>-->
@@ -151,6 +152,7 @@
           latitudeDelta: 0.0922,
           longitudeDelta: 0.0421,
         },
+        poolMarker:undefined,
         superStyle:
                 {
                   color: '#fff',
@@ -267,10 +269,10 @@
               })
             })
 
-            this.markers[1] = {latitude:parseFloat(result[0].fromLatitude),
+            this.poolMarker = {latitude:parseFloat(result[0].fromLatitude),
             longitude:parseFloat(result[0].fromLongitude)}
-            this.markers.push({latitude:parseFloat(result[0].toLatitude),
-              longitude:parseFloat(result[0].toLongitude)})
+            this.markers[1] = {latitude:parseFloat(result[0].toLatitude),
+              longitude:parseFloat(result[0].toLongitude)}
 
             this.drawPath()
           })
@@ -313,7 +315,7 @@
       },
       drawPath(){
         axios.post('http://192.168.43.7:8080/api/route',{
-          coordinates: [this.markers[0],this.markers[1]],
+          coordinates: [this.markers[0],this.poolMarker],
           variant: 'foot'
         }).then(res1=>{
           this.polylines.push(res1.data.routes[0].geometry.coordinates.map(coord=>{
@@ -326,7 +328,7 @@
           //   text:res1.data.routes[0].geometry.coordinates
           // })
           axios.post('http://192.168.43.7:8080/api/route',{
-            coordinates: [this.markers[1],this.markers[2]]
+            coordinates: [this.poolMarker,this.markers[1]]
           }).then(res=>{
             if(res.data && res.data.routes){
               global.distance = res.data.routes[0].distance
@@ -344,6 +346,9 @@
             this.pathDrawed = true
           })
         })
+      },
+      clickOnPullMarker(event){
+        event.stopPropagation()
       },
       clickOnMarker(event,i){
         event.stopPropagation()

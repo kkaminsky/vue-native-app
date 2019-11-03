@@ -12,7 +12,7 @@
         :style="stylesObj.drawerImageObj"
       />
       <view class="text-container">
-        <nb-h3 :style="{ marginBottom: 8, textStyle: 'bold' }" class="text-color-white"
+        <nb-h3 :style="{ marginBottom: 8 }" class="text-color-white"
         >Привет, {{username}}</nb-h3>
       </view>
       <view class="text-container">
