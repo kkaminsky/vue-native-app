@@ -90,6 +90,8 @@ import FamilyIconScreen from "./screens/icons/familyIcon";
 import SimpleIconsScreen from "./screens/icons/icon";
 import PlatformSpecificIconScreen from "./screens/icons/platformSpecificIcon";
 
+import PinCodeInputScreen from "./screens/form/pinCodeInput"
+
 import LayoutScreen from "./screens/layout";
 import ColumnLayoutScreen from "./screens/layout/columnLayout";
 import CustomColumnLayoutScreen from "./screens/layout/customColumnLayout";
@@ -188,6 +190,7 @@ const Drawer = createDrawerNavigator(
 const AppNavigation = createAppContainer(
   createStackNavigator(
     {
+      PinCodeInput: {screen: PinCodeInputScreen },
       Drawer: { screen: Drawer },
       RegularActionSheet: { screen: RegularActionSheetScreen },
       IconActionSheet: { screen: IconActionSheetScreen },

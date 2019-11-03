@@ -256,7 +256,7 @@ export default {
   },
   methods: {
     handleListItemClick(dataObj) {
-      axios.get('http://192.168.43.7:8080/coin/user/' + global.username).then(res1=> {
+      axios.get('http://192.168.43.247:8080/coin/user/' + global.username).then(res1=> {
         global.coins = res1.data.balance
         global.username = res1.data.username
         global.driver = res1.data.driver

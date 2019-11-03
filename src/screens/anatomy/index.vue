@@ -98,20 +98,20 @@
 
     <nb-footer :style="{height:20}" v-if="superFlag">
       <nb-footer-tab>
-        <nb-button rounded large info :style="superStyle3"  :onPress="(event)=>{superFlag=!superFlag}">
+        <nb-button rounded large info :style="superStyle3"  :onPress="(event)=>{switchToPass();}">
           <nb-text :style="superStyle">Я пассажир</nb-text>
         </nb-button>
-        <nb-button light rounded large  :style="superStyle31"  :onPress="(event)=>{superFlag=!superFlag}">
+        <nb-button light rounded large  :style="superStyle31"  :onPress="(event)=>{switchToDriver();}">
           <nb-text :style="superStyle">Я водитель</nb-text>
         </nb-button>
       </nb-footer-tab>
     </nb-footer>
     <nb-footer :style="{height:20}" v-else>
       <nb-footer-tab>
-        <nb-button light rounded large  :style="superStyle31"  :onPress="(event)=>{superFlag=!superFlag}">
+        <nb-button light rounded large  :style="superStyle31"  :onPress="(event)=>{switchToPass();}">
           <nb-text :style="superStyle">Я пассажир</nb-text>
         </nb-button>
-        <nb-button  rounded large info  :style="superStyle3"  :onPress="(event)=>{superFlag=!superFlag}">
+        <nb-button  rounded large info  :style="superStyle3"  :onPress="(event)=>{switchToDriver();}">
           <nb-text :style="superStyle">Я водитель</nb-text>
         </nb-button>
       </nb-footer-tab>
@@ -198,6 +198,7 @@
         searchP2:'',
         uuidReq: '',
         pathDrawed: false,
+        readyForPinCode: false,
         footerText: "Укажите маршрут"
       };
     },
@@ -226,8 +227,22 @@
             Toast.show({
               text:"Литры списаны"
             })
+            this.footerText = "Я у водителя в машине, хочу ввести пин код"
+            this.readyForPinCode = true
           }
         })
+      },
+      switchToDriver(){
+        if(this.readyForPinCode) {
+          this.footerText = 'Показать пин код'
+        }
+        this.superFlag = false
+      },
+      switchToPass(){
+        this.superFlag = true
+        if(this.readyForPinCode) {
+          this.footerText = 'Я у водителя в машине, хочу ввести пин код'
+        }
       },
       createReq(event){
         if(this.markers.length < 2){
@@ -238,14 +253,20 @@
         }
         event.stopPropagation()
         // если маршрут уже построен то начинаем движение к точке сбора
-        // исписываем деньги
-        if(this.pathDrawed && !global.driver) {
+        // исписываем деньги superflag = я пассажир голубая
+        if(this.pathDrawed && this.superFlag && !this.readyForPinCode) {
           let cost = global.distance * 0.001
           Toast.show({
             text:"Убираем деньги " + cost
           })
           this.removeMoney(cost)
           return
+        } else if (this.pathDrawed && !this.superFlag) {
+          return
+        } else if(this.readyForPinCode) {
+          // переход на окно ввода пин кода
+          this.props.navigation.navigate("PinCodeInput")
+          return;
         }
         let guuid = this.uuidv4()
         axios.post('http://192.168.43.7:8080/api/addRequest',{
